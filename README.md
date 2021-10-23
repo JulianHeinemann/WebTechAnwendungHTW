@@ -9,5 +9,5 @@
         Meilenstein 4: 19.12.2021
           Abgabe: 09.01.2021
           
-Team: Tom Phillip Nartschik - Julian Heinrich
+Team: Tom Philip Nartschik - Julian Heinrich
  
