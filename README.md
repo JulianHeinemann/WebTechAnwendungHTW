@@ -1,13 +1,21 @@
-# WebTechAnwendungHTW
+#**WebTechAnwendungHTW**
 
-#Thema: CocktailRezeptAnwendung.
+#*Thema*: 
+###CocktailRezeptAnwendung
 
-#Termine und Fristen:
-  Meilenstein 1: 24.10.2021
-    Meilenstein 2: 14.11.2021
-      Meilenstein 3: 05.12.2021
-        Meilenstein 4: 19.12.2021
-          Abgabe: 09.01.2021
+#*Termine und Fristen*:
+  ####Meilenstein 1: 24.10.2021
+####Meilenstein 2: 14.11.2021
+####Meilenstein 3: 05.12.2021
+####Meilenstein 4: 19.12.2021
+####Abgabe: 09.01.2021
           
-Team: Tom Philip Nartschik - Julian Heinrich
- 
+##*Team*: 
+#####Tom Phillip Nartschik - Julian Heinrich
+
+##*GitRepo*:
+[1] :https://github.com/JulianHeinemann/WebTechAnwendungHTW
+
+##*Dozent*:
+
+Prof.Dr.Arif Wider
