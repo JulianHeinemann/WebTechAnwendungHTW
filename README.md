@@ -11,7 +11,7 @@
 ####Abgabe: 09.01.2021
           
 ##*Team*: 
-#####Tom Phillip Nartschik - Julian Heinrich
+#####Tom Philip Nartschik 578897 - Julian Heinrich 533869
 
 ##*GitRepo*:
 [1] :https://github.com/JulianHeinemann/WebTechAnwendungHTW
