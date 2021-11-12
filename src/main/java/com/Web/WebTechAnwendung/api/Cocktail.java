@@ -16,7 +16,7 @@ public class Cocktail {
     private String zutat1;
     private String name;
 
-    public Cocktail(String zutat1, String name) {
+    public Cocktail(long id, String zutat1, String name) {
         this.id = id;
         this.zutat1 = zutat1;
         this.name = name;

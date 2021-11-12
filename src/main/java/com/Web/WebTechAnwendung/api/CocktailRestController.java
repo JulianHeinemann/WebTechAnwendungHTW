@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class CocktailRestController {
+public class  CocktailRestController {
 
     private List<Cocktail> cocktails;
 
@@ -20,13 +20,17 @@ public class CocktailRestController {
     CocktailService service;
 
     public CocktailRestController() {
-    }
+        cocktails = new ArrayList<>();
+        cocktails.add(new Cocktail(1,"gin","Gin Shot"));
+        cocktails.add(new Cocktail(2,"vodka","Vodka Shot"));
 
+    }
 
     @PostMapping("/Cocktail")
     public Cocktail createCocktail(@RequestBody Cocktail cocktail){
         return service.save(cocktail);
     }
+
     @GetMapping(path= "/api/v1/cocktails")
     public ResponseEntity<List<Cocktail>> fetchCocktails(){
         return ResponseEntity.ok(cocktails);
