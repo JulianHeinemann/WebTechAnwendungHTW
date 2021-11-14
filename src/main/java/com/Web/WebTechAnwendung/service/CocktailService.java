@@ -15,6 +15,8 @@ import java.util.stream.Collectors;
 public class CocktailService {
 
 
+    CocktailRepository repo;
+
     private final CocktailRepository cocktailRepository;
 
     public CocktailService(CocktailRepository cocktailRepository) {
