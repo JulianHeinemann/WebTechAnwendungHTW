@@ -6,10 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
+import com.Web.WebTechAnwendung.service.CocktailService;
 import java.util.Set;
 
 @Entity
 public class Cocktail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

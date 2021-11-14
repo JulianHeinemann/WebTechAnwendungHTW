@@ -10,14 +10,13 @@ public class CocktailEntity {
     @Column(name = "Id")
     private Long id;
 
-    @Column(name = "Zutat 1", nullable = false)
+    @Column(name = "Zutat1")
     private String zutat1;
 
-    @Column(name = "Name", nullable = false)
+    @Column(name = "Name")
     private String name;
 
-    public CocktailEntity(Long id, String zutat1, String name) {
-        this.id = id;
+    public CocktailEntity( String zutat1, String name) {
         this.zutat1 = zutat1;
         this.name = name;
     }
