@@ -23,37 +23,41 @@ public class  CocktailRestController {
         this.cocktailService = cocktailService;
     }
 
+    @GetMapping(path= "/")
+    public String standard(){
+        return "default";
+    }
 
    /* @PostMapping("/Cocktail")
     public Cocktail createCocktail(@RequestBody Cocktail cocktail){
         return cocktailService.save(cocktail);
     }
 */
-    @GetMapping(path= "/api/v1/cocktails")
+    @GetMapping(path= "/cocktails")
     public ResponseEntity<List<Cocktail>> fetchCocktails(){
         return ResponseEntity.ok(cocktailService.findAll());
     }
 
-    @GetMapping(path="/api/v1/cocktails/{id}" )
+    @GetMapping(path="/cocktails/{id}" )
     public ResponseEntity<Cocktail>fetchCocktails(@PathVariable Long id){
         var cocktail = cocktailService.findById(id);
         return cocktail != null? ResponseEntity.ok(cocktail) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping(path= "/api/v1/cocktails")
+    @PostMapping(path= "/cocktails")
     public ResponseEntity<Void>creatCocktail(@RequestBody CocktailCreat cocktailCreat) throws URISyntaxException {
         var cocktailEntity = cocktailService.create(cocktailCreat);
-        URI uri = new URI("/api/v1/cocktails/" + cocktailEntity.getId());
+        URI uri = new URI("/cocktails/" + cocktailEntity.getId());
         return ResponseEntity.created(uri).build();
     }
 
-    @PutMapping(path = "/api/v1/cocktails/{id}")
+    @PutMapping(path = "/cocktails/{id}")
         public ResponseEntity<Cocktail> updateCocktail(@PathVariable Long id, @RequestBody CocktailCreat cocktailCreat){
             var cocktail = cocktailService.update(id, cocktailCreat);
             return cocktail != null? ResponseEntity.ok(cocktail) : ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping(path = "/api/v1/cocktails/{id}")
+    @DeleteMapping(path = "/cocktails/{id}")
     public ResponseEntity<Void> deleteCocktail(@PathVariable Long id){
         boolean successful = cocktailService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
