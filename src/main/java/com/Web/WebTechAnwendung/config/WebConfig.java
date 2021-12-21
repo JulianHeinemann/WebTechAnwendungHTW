@@ -14,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .allowedOrigins(
                         "http://localhost:8081",
-                        "https://webtechcocktailapp.herokuapp.com"
+                        "https://webtech-cocktail-frontend.herokuapp.com"
                         );
 
     }

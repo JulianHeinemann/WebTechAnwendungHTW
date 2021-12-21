@@ -8,6 +8,4 @@ public class WebTechAnwendungApplication {
 
 	public static void main(String[] args) { SpringApplication.run(WebTechAnwendungApplication.class, args);}
 
-
-
 }
