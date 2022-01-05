@@ -5,27 +5,29 @@ import java.util.List;
 
 public class CocktailCreate {
 
-    private String zutat1;
+    private String rezept;
     private String name;
+    private List<String> zutaten;
 
-    public CocktailCreate(String zutat1, String name) {
-        this.zutat1 = zutat1;
+    public CocktailCreate(String rezept, String name, List<String> zutaten) {
+        this.rezept = rezept;
         this.name = name;
+        this.zutaten = zutaten;
     }
 
-    public String getZutat1() {
-        return zutat1;
+    public String getRezept() {
+        return rezept;
     }
 
-    public void setZutat1(String zutat1) {
-            this.zutat1 = zutat1;
+    public void setRezept(String rezept) {
+            this.rezept = rezept;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
+
+    public List<String> getZutaten() { return zutaten; }
+
+    public void setZutaten(List<String> zutaten) { this.zutaten = zutaten; }
 }

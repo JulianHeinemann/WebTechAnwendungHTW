@@ -34,7 +34,7 @@ public class CocktailService {
     }
 
     public Cocktail create(CocktailCreate cocktailCreate){
-        var cocktailEntity = new CocktailEntity(cocktailCreate.getZutat1(), cocktailCreate.getName());
+        var cocktailEntity = new CocktailEntity(cocktailCreate.getRezept(), cocktailCreate.getName(), cocktailCreate.getZutaten());
         cocktailEntity = cocktailRepository.save(cocktailEntity);
         return transformEntity(cocktailEntity);
     }
@@ -58,7 +58,7 @@ public class CocktailService {
         }
         var cocktailEntity = cocktailEntityOptional.get();
         cocktailEntity.setName(cocktailCreate.getName());
-        cocktailEntity.setRezept(cocktailCreate.getZutat1());
+        cocktailEntity.setRezept(cocktailCreate.getRezept());
         cocktailRepository.save(cocktailEntity);
 
         return transformEntity(cocktailEntity);
