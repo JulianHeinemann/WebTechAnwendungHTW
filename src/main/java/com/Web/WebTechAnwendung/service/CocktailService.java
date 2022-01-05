@@ -6,7 +6,6 @@ import com.Web.WebTechAnwendung.persistence.CocktailEntity;
 import com.Web.WebTechAnwendung.persistence.CocktailRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -1,29 +1,28 @@
 package com.Web.WebTechAnwendung.persistence;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "cocktail")
 public class CocktailEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "Rezept")
+    @Column(name = "rezept")
     private String rezept;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Zutaten")
+    @Column(name = "zutaten")
     private String zutaten;
 
-    public CocktailEntity(String rezept, String name, String zutatenliste) {
+    public CocktailEntity(String rezept, String name, String zutaten) {
         this.rezept = rezept;
         this.name = name;
-        this.zutaten = zutatenliste;
+        this.zutaten = zutaten;
     }
 
     protected CocktailEntity() {}
@@ -34,9 +33,7 @@ public class CocktailEntity {
 
     public String getRezept() { return rezept; }
 
-    public void setRezept(String zutat1) {
-        this.rezept = zutat1;
-    }
+    public void setRezept(String rezept) {this.rezept = rezept;}
 
     public String getName() {
         return name;
