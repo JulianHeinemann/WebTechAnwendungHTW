@@ -45,15 +45,15 @@ public class  CocktailRestController {
     }
 
     @PostMapping(path= "/cocktails")
-    public ResponseEntity<Void>creatCocktail(@RequestBody CocktailCreat cocktailCreat) throws URISyntaxException {
-        var cocktailEntity = cocktailService.create(cocktailCreat);
+    public ResponseEntity<Void>creatCocktail(@RequestBody CocktailCreate cocktailCreate) throws URISyntaxException {
+        var cocktailEntity = cocktailService.create(cocktailCreate);
         URI uri = new URI("/cocktails/" + cocktailEntity.getId());
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(path = "/cocktails/{id}")
-        public ResponseEntity<Cocktail> updateCocktail(@PathVariable Long id, @RequestBody CocktailCreat cocktailCreat){
-            var cocktail = cocktailService.update(id, cocktailCreat);
+        public ResponseEntity<Cocktail> updateCocktail(@PathVariable Long id, @RequestBody CocktailCreate cocktailCreate){
+            var cocktail = cocktailService.update(id, cocktailCreate);
             return cocktail != null? ResponseEntity.ok(cocktail) : ResponseEntity.notFound().build();
     }
 

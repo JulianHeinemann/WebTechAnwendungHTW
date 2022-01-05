@@ -1,6 +1,7 @@
 package com.Web.WebTechAnwendung.persistence;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "cocktail")
 public class CocktailEntity {
@@ -10,15 +11,19 @@ public class CocktailEntity {
     @Column(name = "Id")
     private Long id;
 
-    @Column(name = "Zutat1")
-    private String zutat1;
+    @Column(name = "Rezept")
+    private String rezept;
 
     @Column(name = "Name")
     private String name;
 
-    public CocktailEntity( String zutat1, String name) {
-        this.zutat1 = zutat1;
+    @Column(name = "Zutaten")
+    private String zutaten;
+
+    public CocktailEntity(String rezept, String name, List<String> zutatenliste) {
+        this.rezept = rezept;
         this.name = name;
+        this.zutaten = zutatenliste.toString();
     }
 
     protected CocktailEntity() {}
@@ -27,12 +32,10 @@ public class CocktailEntity {
         return id;
     }
 
-    public String getZutat1() {
-        return zutat1;
-    }
+    public String getRezept() { return rezept; }
 
-    public void setZutat1(String zutat1) {
-        this.zutat1 = zutat1;
+    public void setRezept(String zutat1) {
+        this.rezept = zutat1;
     }
 
     public String getName() {
@@ -42,4 +45,8 @@ public class CocktailEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getZutaten() { return zutaten; }
+
+    public void setZutaten(String zutaten) { this.zutaten = zutaten; }
 }

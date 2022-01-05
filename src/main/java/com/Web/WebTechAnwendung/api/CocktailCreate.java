@@ -1,11 +1,14 @@
 package com.Web.WebTechAnwendung.api;
 
-public class CocktailCreat {
+
+import java.util.List;
+
+public class CocktailCreate {
 
     private String zutat1;
     private String name;
 
-    public CocktailCreat(String zutat1, String name) {
+    public CocktailCreate(String zutat1, String name) {
         this.zutat1 = zutat1;
         this.name = name;
     }
@@ -15,7 +18,7 @@ public class CocktailCreat {
     }
 
     public void setZutat1(String zutat1) {
-        this.zutat1 = zutat1;
+            this.zutat1 = zutat1;
     }
 
     public String getName() {

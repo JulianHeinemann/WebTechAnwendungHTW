@@ -39,7 +39,7 @@ public class Cocktail {
         return zutat1;
     }
 
-    public void setZutaten(List<String> zutaten) {
+    public void setZutaten(String zutat1) {
         this.zutat1 = zutat1;
     }
 
