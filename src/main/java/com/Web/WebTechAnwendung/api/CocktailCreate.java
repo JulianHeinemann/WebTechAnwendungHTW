@@ -1,18 +1,19 @@
 package com.Web.WebTechAnwendung.api;
 
 
-import java.util.List;
-
 public class CocktailCreate {
 
     private String rezept;
     private String name;
-    private List<String> zutaten;
+    private String zutaten;
 
-    public CocktailCreate(String rezept, String name, List<String> zutaten) {
+    public CocktailCreate(String rezept, String name, String zutaten) {
         this.rezept = rezept;
         this.name = name;
         this.zutaten = zutaten;
+    }
+    protected CocktailCreate(){
+
     }
 
     public String getRezept() {
@@ -27,7 +28,7 @@ public class CocktailCreate {
 
     public void setName(String name) { this.name = name; }
 
-    public List<String> getZutaten() { return zutaten; }
+    public String getZutaten() { return zutaten; }
 
-    public void setZutaten(List<String> zutaten) { this.zutaten = zutaten; }
+    public void setZutaten(String zutaten) { this.zutaten = zutaten; }
 }

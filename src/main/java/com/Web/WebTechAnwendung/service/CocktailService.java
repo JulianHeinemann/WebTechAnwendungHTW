@@ -6,6 +6,7 @@ import com.Web.WebTechAnwendung.persistence.CocktailEntity;
 import com.Web.WebTechAnwendung.persistence.CocktailRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +28,8 @@ public class CocktailService {
                 .map(cocktailEntity -> new Cocktail(
                         cocktailEntity.getId(),
                         cocktailEntity.getRezept(),
-                        cocktailEntity.getName())
+                        cocktailEntity.getName(),
+                        cocktailEntity.getZutaten())
                 )
                 .collect(Collectors.toList());
 
@@ -43,7 +45,8 @@ public class CocktailService {
         return new Cocktail(
                 cocktailEntity.getId(),
                 cocktailEntity.getRezept(),
-                cocktailEntity.getName());
+                cocktailEntity.getName(),
+                cocktailEntity.getZutaten());
     }
 
     public Cocktail findById(Long id){

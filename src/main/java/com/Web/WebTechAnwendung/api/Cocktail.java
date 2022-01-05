@@ -15,18 +15,25 @@ public class Cocktail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String zutat1;
+    private String rezept;
     private String name;
+    private String zutaten;
 
-    public Cocktail(long id, String zutat1, String name) {
+    public Cocktail(long id, String inputRezept, String name, String zutaten) {
         this.id = id;
-        this.zutat1 = zutat1;
+        this.rezept = inputRezept;
         this.name = name;
+        this.zutaten = zutaten;
     }
 
     public Cocktail() {
 
     }
+
+    public String getRezept() { return rezept; }
+
+    public void setRezept(String rezept) { this.rezept = rezept; }
+
     public long getId() {
         return id;
     }
@@ -35,13 +42,9 @@ public class Cocktail {
         this.id = id;
     }
 
-    public String getZutaten() {
-        return zutat1;
-    }
+    public String getZutaten() { return zutaten; }
 
-    public void setZutaten(String zutat1) {
-        this.zutat1 = zutat1;
-    }
+    public void setZutaten(String zutaten) { this.zutaten = zutaten; }
 
     public String getName() { return name; }
 

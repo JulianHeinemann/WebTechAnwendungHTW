@@ -20,10 +20,10 @@ public class CocktailEntity {
     @Column(name = "Zutaten")
     private String zutaten;
 
-    public CocktailEntity(String rezept, String name, List<String> zutatenliste) {
+    public CocktailEntity(String rezept, String name, String zutatenliste) {
         this.rezept = rezept;
         this.name = name;
-        this.zutaten = zutatenliste.toString();
+        this.zutaten = zutatenliste;
     }
 
     protected CocktailEntity() {}
