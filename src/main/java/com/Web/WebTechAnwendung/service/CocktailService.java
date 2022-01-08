@@ -28,14 +28,14 @@ public class CocktailService {
                         cocktailEntity.getId(),
                         cocktailEntity.getRezept(),
                         cocktailEntity.getName(),
-                        cocktailEntity.getZutaten())
-                )
-                .collect(Collectors.toList());
+                        cocktailEntity.getZutaten(),
+                        cocktailEntity.getTags())
+                ).collect(Collectors.toList());
 
     }
 
     public Cocktail create(CocktailCreate cocktailCreate){
-        var cocktailEntity = new CocktailEntity(cocktailCreate.getRezept(), cocktailCreate.getName(), cocktailCreate.getZutaten());
+        var cocktailEntity = new CocktailEntity(cocktailCreate.getRezept(), cocktailCreate.getName(), cocktailCreate.getZutaten(),cocktailCreate.getTags());
         cocktailEntity = cocktailRepository.save(cocktailEntity);
         return transformEntity(cocktailEntity);
     }
@@ -45,7 +45,8 @@ public class CocktailService {
                 cocktailEntity.getId(),
                 cocktailEntity.getRezept(),
                 cocktailEntity.getName(),
-                cocktailEntity.getZutaten());
+                cocktailEntity.getZutaten(),
+                cocktailEntity.getTags());
     }
 
     public Cocktail findById(Long id){
@@ -61,6 +62,8 @@ public class CocktailService {
         var cocktailEntity = cocktailEntityOptional.get();
         cocktailEntity.setName(cocktailCreate.getName());
         cocktailEntity.setRezept(cocktailCreate.getRezept());
+        cocktailEntity.setZutaten(cocktailCreate.getZutaten());
+        cocktailEntity.setTags(cocktailCreate.getTags());
         cocktailRepository.save(cocktailEntity);
 
         return transformEntity(cocktailEntity);

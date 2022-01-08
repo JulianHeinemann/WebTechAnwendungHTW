@@ -6,12 +6,14 @@ public class Cocktail {
     private String rezept;
     private String name;
     private String zutaten;
+    private String tags;
 
-    public Cocktail(long id, String rezept, String name, String zutaten) {
+    public Cocktail(long id, String rezept, String name, String zutaten, String tags) {
         this.id = id;
         this.rezept = rezept;
         this.name = name;
         this.zutaten = zutaten;
+        this.tags = tags;
     }
 
     public String getRezept() { return rezept; }
@@ -30,5 +32,13 @@ public class Cocktail {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }

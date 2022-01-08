@@ -28,11 +28,6 @@ public class  CocktailRestController {
         return "default";
     }
 
-   /* @PostMapping("/Cocktail")
-    public Cocktail createCocktail(@RequestBody Cocktail cocktail){
-        return cocktailService.save(cocktail);
-    }
-*/
     @GetMapping(path= "/cocktails")
     public ResponseEntity<List<Cocktail>> fetchCocktails(){
         return ResponseEntity.ok(cocktailService.findAll());

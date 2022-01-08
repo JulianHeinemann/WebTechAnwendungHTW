@@ -19,10 +19,14 @@ public class CocktailEntity {
     @Column(name = "zutaten")
     private String zutaten;
 
-    public CocktailEntity(String rezept, String name, String zutaten) {
+    @Column(name = "tags")
+    private String tags;
+
+    public CocktailEntity(String rezept, String name, String zutaten, String tags) {
         this.rezept = rezept;
         this.name = name;
         this.zutaten = zutaten;
+        this.tags = tags;
     }
 
     protected CocktailEntity() {}
@@ -46,4 +50,12 @@ public class CocktailEntity {
     public String getZutaten() { return zutaten; }
 
     public void setZutaten(String zutaten) { this.zutaten = zutaten; }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
 }
