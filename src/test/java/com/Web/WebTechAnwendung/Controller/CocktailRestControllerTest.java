@@ -75,7 +75,7 @@ class CocktailRestControllerTest {
     @DisplayName("should return 201 http status and Location header when creating a new Cocktail")
     void should_return_201_http_status_and_location_header_when_creating_a_cocktail() throws Exception {
         // given
-        String cocktailToCreateAsJson = "{\"rezept\": \"lecker\", \"name\":\"Beach\", \"zutaten\":\"Vodka\", \"tags\": \"sanft\"}";
+        String cocktailToCreateAsJson = "{\"rezept\": \"einfahc ganz viele sachen zusammenkippen und rein damit\", \"name\":\"Beach vibe\", \"zutaten\":\"Vodka,Rum, Tonic\", \"tags\": \"STARK\"}";
         var cocktail = new Cocktail(123, null, null, null, null);
         doReturn(cocktail).when(cocktailService).create(any());
 
