@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -40,10 +41,16 @@ public class  CocktailRestController {
     }
 
     @PostMapping(path= "/cocktails")
-    public ResponseEntity<Void>creatCocktail(@RequestBody CocktailCreate cocktailCreate) throws URISyntaxException {
-        var cocktailEntity = cocktailService.create(cocktailCreate);
-        URI uri = new URI("/cocktails/" + cocktailEntity.getId());
-        return ResponseEntity.created(uri).build();
+    public ResponseEntity<Void>creatCocktail(@Valid @RequestBody CocktailCreate cocktailCreate) throws URISyntaxException {
+        var valid = validate(cocktailCreate);
+        if (valid) {
+            var cocktailEntity = cocktailService.create(cocktailCreate);
+            URI uri = new URI("/cocktails/" + cocktailEntity.getId());
+            return ResponseEntity.created(uri).build();
+        }
+        else{
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping(path = "/cocktails/{id}")
@@ -56,5 +63,15 @@ public class  CocktailRestController {
     public ResponseEntity<Void> deleteCocktail(@PathVariable Long id){
         boolean successful = cocktailService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+    private boolean validate (CocktailCreate cocktailCreate){
+        return cocktailCreate.getName() != null
+                && !cocktailCreate.getName().isBlank()
+                && cocktailCreate.getRezept() != null
+                && !cocktailCreate.getRezept().isBlank()
+                && cocktailCreate.getZutaten() != null
+                && !cocktailCreate.getZutaten().isBlank()
+                && cocktailCreate.getTags() != null
+                && !cocktailCreate.getTags().isBlank();
     }
 }
