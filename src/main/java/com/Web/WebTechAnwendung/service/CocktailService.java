@@ -12,9 +12,6 @@ import java.util.stream.Collectors;
 @Service
 public class CocktailService {
 
-
-    CocktailRepository repo;
-
     private final CocktailRepository cocktailRepository;
 
     public CocktailService(CocktailRepository cocktailRepository) {
@@ -40,7 +37,7 @@ public class CocktailService {
         return transformEntity(cocktailEntity);
     }
 
-    private Cocktail transformEntity(CocktailEntity cocktailEntity){
+    public Cocktail transformEntity(CocktailEntity cocktailEntity){
         return new Cocktail(
                 cocktailEntity.getId(),
                 cocktailEntity.getRezept(),

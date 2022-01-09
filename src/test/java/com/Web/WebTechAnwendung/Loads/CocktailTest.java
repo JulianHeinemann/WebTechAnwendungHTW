@@ -1,4 +1,4 @@
-package com.Web.WebTechAnwendung;
+package com.Web.WebTechAnwendung.Loads;
 
 
 import org.junit.jupiter.api.Test;
